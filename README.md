@@ -40,11 +40,3 @@ Esta es una aplicación web desarrollada con el framework Angular. Es un proyect
 
 ---
 
-## Colaboradores
-
--   Jorge Enrique Gonzales Carrión
--   Paolo Andre Espejo Macuri
--   Shayla Lussiné Choque Puma
--   Josue Ramos Ramírez
--   Lorenzo Navarro Robles
-
