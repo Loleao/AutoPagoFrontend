@@ -20,6 +20,7 @@ export class Credit {
   cok: number = 0;
   initialDate: Date | null = null;
   finalDate: Date | null = null;
+  userId: number = 0;
 
   constructor(data: Credit) {
     Object.assign(this, data);

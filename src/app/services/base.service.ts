@@ -2,8 +2,9 @@ import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {catchError, Observable, retry, throwError} from "rxjs";
 
 export class BaseService<T> {
-  basePath:string='https://autopago-api.zeabur.app/api/v1';
+  //basePath:string='https://autopago-api.zeabur.app/api/v1';
   //basePath:string='http://localhost:3000/api/v1';
+  basePath:string='http://localhost:8080/api/v1';
   resourceEndpoint:string='/resources';
 
   httpOptions = {
@@ -12,7 +13,7 @@ export class BaseService<T> {
     })
   }
 
-  constructor(private http:HttpClient) { }
+  constructor(protected http:HttpClient) { }
 
   handleError(error:HttpErrorResponse){
     if(error.error instanceof ErrorEvent){
@@ -55,7 +56,7 @@ export class BaseService<T> {
       .pipe(retry(2), catchError(this.handleError));
   }
 
-  private resourcePath():string{
+  protected resourcePath():string{
     return `${this.basePath}${this.resourceEndpoint}`;
   }
 

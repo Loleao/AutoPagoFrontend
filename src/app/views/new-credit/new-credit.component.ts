@@ -76,6 +76,7 @@ export class NewCreditComponent {
   getDateErrorMessage() {
     return 'Debes ingresar una fecha válida';
   }
+
   createCredit() {
     if(this.creditForm.valid) {
       const formData = this.creditForm.value;

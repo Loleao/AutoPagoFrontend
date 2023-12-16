@@ -10,18 +10,18 @@
       <mat-card-content class="card-content">
         <mat-form-field>
           <mat-label>Correo</mat-label>
-          <input matInput placeholder="name@example.com" [formControl]="validations.email" required>
+          <input matInput placeholder="name@example.com" [formControl]="loginForm.get('email')" required>
           <mat-error *ngIf="validations.email.invalid">{{validations.getEmailErrorMessage()}}</mat-error>
         </mat-form-field>
         <mat-form-field>
           <mat-label>Contraseña</mat-label>
-          <input matInput [type]="hide ? 'password' : 'text'" [formControl]="validations.password" required>
+          <input matInput [type]="hide ? 'password' : 'text'" [formControl]="loginForm.get('password')" required>
           <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Ocultar contraseña'" [attr.aria-pressed]="hide">
             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
           </button>
           <mat-error *ngIf="validations.password">{{validations.getPasswordErrorMessage()}}</mat-error>
         </mat-form-field>
-        <a class="action-button" mat-raised-button color="accent" routerLink="/home">Ingresar</a>
+        <a class="action-button" (click)="login()" mat-raised-button color="accent">Ingresar</a>
       </mat-card-content>
       <mat-card-footer class="card-footer">
         <p>¿Eres un usuario nuevo?</p>
